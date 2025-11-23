@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Coco ❤️</title>
+
+    <!-- Google Font: Amatic SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg1: #ff9a9e;
+            --bg2: #fad0c4;
+            --text: #444;
+            --card-bg: white;
+        }
+
+        body.dark {
+            --bg1: #1e1e1e;
+            --bg2: #3a3a3a;
+            --text: #f0f0f0;
+            --card-bg: #2a2a2a;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Amatic SC", cursive; /* Changed to Amatic SC */
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            transition: background 1s ease;
+        }
+
+        .card {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            animation: fadeIn 2s ease forwards;
+            transition: background 0.5s ease;
+        }
+
+        h1 {
+            color: #ff4b6e;
+            font-size: 4rem; /* Increased font size */
+            margin: 0;
+            font-family: "Amatic SC", cursive; /* Ensures heading uses Amatic SC */
+            font-weight: bold; /* Bold the heading */
+        }
+
+        #typewriter {
+            margin-top: 20px;
+            font-size: 1.8rem; /* Increased font size */
+            color: var(--text);
+            min-height: 2.5rem;
+            white-space: pre-wrap;
+            font-family: "Amatic SC", cursive; /* Typewriter text also Amatic SC */
+            font-weight: bold; /* Bold the typewriter text */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.7);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 1.2rem; /* Increased font size */
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: "Amatic SC", cursive; /* Button text also Amatic SC */
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255,255,255,0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark mode toggle -->
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode 🌙</button>
+
+    <div class="card">
+        <h1>Coco 🎀</h1>
+        <p id="typewriter"></p>
+    </div>
+
+    <!-- Background music -->
+    <audio autoplay loop>
+        <source src="your-music-file.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        const message = "I love you.\nYou mean the world to me. I love you so much coco and I really need u in my life I imagined my whole future with u and I don't want to lose u I know things are going hard for u and for me too but if you trust me and believe in me we can fix everything together and live like we used to do you're so special and precious to me and whenever some try to get close to u it feels like some is trying to get into my comfort zone and I don't want that you know everything about me and you understand me so well and yeah am obsessed with ur beauty but am so in love with ur soul so please don't choose anyone over me tell me how u want to be treated and I'll treat u in that way and love you like you wanted to get loved and I am really sorry for my mistakes. Whenever I talk to you my day feels so special and I get so happy just like a kid got his fav thing I really love you a lot.";
+        const speed = 60;
+        let i = 0;
+
+        function typeWriter() {
+            if (i < message.length) {
+                document.getElementById("typewriter").textContent += message.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        typeWriter();
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+</html>
